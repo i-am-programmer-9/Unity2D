@@ -7,22 +7,22 @@ public class PositionLimit : MonoBehaviour {
     public float xMax, yMax;
     public float xMin, yMin;
 
-    Transform transform;
+    Transform transformPos;
 
 	// Use this for initialization
 	void Start () {
-        transform = GetComponent<Transform>();
+        transformPos = GetComponent<Transform>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        float x = transform.position.x;
-        float y = transform.position.y;
+        float x = transformPos.position.x;
+        float y = transformPos.position.y;
 
-        if (x > xMax) transform.position = new Vector3(xMax, y);
-        else if (x < xMin) transform.position = new Vector3(xMin, y);
+        if (x > xMax) transformPos.position = new Vector3(xMax, y);
+        else if (x < xMin) transformPos.position = new Vector3(xMin, y);
 
-        if (y > yMax) transform.position = new Vector3(x, yMax);
-        else if (y < yMin) transform.position = new Vector3(x, yMin);
+        if (y > yMax) transformPos.position = new Vector3(x, yMax);
+        else if (y < yMin) transformPos.position = new Vector3(x, yMin);
     }
 }
